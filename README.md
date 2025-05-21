@@ -1,6 +1,6 @@
-# 🚀 Vue.js CI/CD Deployment on GitHub Pages (via Node javascript)
+# 🚀 Vue.js CI/CD Deployment on GitHub Pages (via Node)
 
-This project demonstrates how to set up a **Vue 3 + Vite** project using **Bun** or **Node.js**, with automated deployment to **GitHub Pages** using a custom Node.js script (`deploy-gh-pages.mjs`) and GitHub Actions.
+This project demonstrates how to set up a **Vue 3 + Vite** project using **Bun** or **Node.js**, with automated deployment to **GitHub Pages** using gh-pages package and GitHub Actions.
 
 > 📡 **Live Demo:** [https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages](https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages)
 
@@ -11,7 +11,7 @@ This project demonstrates how to set up a **Vue 3 + Vite** project using **Bun**
 - ⚡ [Vue 3](https://vuejs.org/)
 - ⚗️ [Vite](https://vitejs.dev/)
 - 🧪 [Bun](https://bun.sh/) or [Node.js](https://nodejs.org/)
-- 🌀 Custom GitHub Pages deploy script
+- 🌀 GitHub Pages deploy script
 - 🛠 GitHub Actions CI/CD
 
 ---
@@ -63,7 +63,6 @@ Automatic deployment is also set up via .github/workflows/deploy.yml. On every p
 ```bash
 .
 ├── .github/workflows/deploy.yml   # GitHub Actions CI/CD
-├── deploy-gh-pages.mjs            # Node.js deploy script
 ├── src/                           # Vue app source code
 ├── dist/                          # Auto-generated after build
 ├── index.html
@@ -73,13 +72,28 @@ Automatic deployment is also set up via .github/workflows/deploy.yml. On every p
 
 ## 🛠 Scripts in package.json
 
+For your local machine:
+
 ```json
 {
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "node deploy-gh-pages.mjs"
+    "deploy": "vite build && gh-pages -d dist"
+  }
+}
+```
+
+For GitHub Actions:
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist -u 'Max Base (Seyyed Ali Mohammadiyeh) <maxbasecode@gmail.com>' -r https://x-access-token:${GITHUB_TOKEN}@github.com/BaseMax/vuejs-cicd-deploy-on-github-pages.git"
   }
 }
 ```
@@ -88,8 +102,8 @@ Automatic deployment is also set up via .github/workflows/deploy.yml. On every p
 
 Make sure GitHub Pages is enabled in repo settings:
 
-- Branch: gh-pages
-- Folder: / (root)
+- Branch: `gh-pages`
+- Folder: `/` (root)
 
 This repo is set to private: `"private": true` (optional for public sharing)
 
