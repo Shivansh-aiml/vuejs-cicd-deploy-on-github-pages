@@ -9,13 +9,13 @@ import * as fs from "fs";
       "--orphan",
       "gh-pages",
     ]);
+    
     console.log(`Building started...`);
     await execa("npm", [
       "run",
       "build",
     ]);
 
-    // Understand if it's dist or build folder
     const folderName = fs.existsSync("dist") ? "dist" : "build";
     await execa("git", [
       "--work-tree",
@@ -23,6 +23,7 @@ import * as fs from "fs";
       "add",
       "--all",
     ]);
+
     await execa("git", [
       "--work-tree",
       folderName,
@@ -30,6 +31,7 @@ import * as fs from "fs";
       "-m",
       "gh-pages",
     ]);
+
     console.log(`Pushing to gh-pages...`);
     await execa("git", [
       "push",
@@ -37,15 +39,18 @@ import * as fs from "fs";
       "HEAD:gh-pages",
       "--force",
     ]);
+
     await execa("rm", [
       "-r",
       folderName,
     ]);
+
     await execa("git", [
       "checkout",
       "-f",
       "master",
     ]);
+
     await execa("git", [
       "branch",
       "-D",
