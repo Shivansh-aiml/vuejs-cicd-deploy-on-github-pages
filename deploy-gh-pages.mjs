@@ -1,46 +1,62 @@
+/* eslint-disable max-statements, no-process-exit, no-console */
 import { execa } from "execa";
+import * as emoji from "node-emoji";
+import chalk from "chalk";
 import * as fs from "fs";
-import * as path from "path";
 
-const ghPagesPath = ".gh-pages-temp";
-const gitWorktreeMeta = path.join(ghPagesPath, ".git");
-
+const iconArrows = emoji.get("fast_forward");
+const iconRocket = emoji.get("rocket");
 (async () => {
   try {
-    if (fs.existsSync(ghPagesPath)) {
-      if (!fs.existsSync(gitWorktreeMeta)) {
-        console.log("⚠️ .gh-pages-temp exists but no .git found, deleting folder...");
-        fs.rmSync(ghPagesPath, { recursive: true, force: true });
-      } else {
-        console.log("🧹 Removing existing worktree...");
-        await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
-      }
-    }
-
-    console.log("📦 Building project...");
-    await execa("npm", ["run", "build"]);
+    await execa("git", [
+      "checkout",
+      "--orphan",
+      "gh-pages",
+    ]);
+    console.log(`${iconArrows} ${chalk.yellow("Building started...")}`);
+    await execa("npm", [
+      "run",
+      "build",
+    ]);
 
     const folderName = fs.existsSync("dist") ? "dist" : "build";
-
-    console.log("🌿 Creating worktree for gh-pages...");
-    await execa("git", ["worktree", "add", "-f", ghPagesPath, "gh-pages"]);
-
-    console.log("📁 Copying build output to worktree...");
-    fs.rmSync(ghPagesPath, { recursive: true, force: true });
-    fs.mkdirSync(ghPagesPath);
-    fs.cpSync(folderName, ghPagesPath, { recursive: true });
-
-    console.log("📤 Committing and pushing...");
-    await execa("git", ["-C", ghPagesPath, "add", "--all"]);
-    await execa("git", ["-C", ghPagesPath, "commit", "-m", "Deploy to gh-pages", "--allow-empty"]);
-    await execa("git", ["-C", ghPagesPath, "push", "origin", "gh-pages", "--force"]);
-
-    console.log("🧹 Cleaning up...");
-    await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
-
-    console.log("✅ Successfully deployed!");
+    await execa("git", [
+      "--work-tree",
+      folderName,
+      "add",
+      "--all",
+    ]);
+    await execa("git", [
+      "--work-tree",
+      folderName,
+      "commit",
+      "-m",
+      "gh-pages",
+    ]);
+    console.log(`${iconArrows} ${chalk.yellow("Pushing to gh-pages...")}`);
+    await execa("git", [
+      "push",
+      "origin",
+      "HEAD:gh-pages",
+      "--force",
+    ]);
+    await execa("rm", [
+      "-r",
+      folderName,
+    ]);
+    await execa("git", [
+      "checkout",
+      "-f",
+      "master",
+    ]);
+    await execa("git", [
+      "branch",
+      "-D",
+      "gh-pages",
+    ]);
+    console.log(`${iconRocket} ${chalk.green("Successfully deployed")} ${iconRocket}`);
   } catch (e) {
-    console.error(`❌ Deployment failed: ${e.message}`);
+    console.log(e.message);
     process.exit(1);
   }
 })();
