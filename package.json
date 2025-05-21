@@ -18,6 +18,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "execa": "^9.5.3",
     "vue": "^3.5.14"
   }
 }
