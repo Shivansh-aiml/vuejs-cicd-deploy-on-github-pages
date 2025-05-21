@@ -1,4 +1,3 @@
-/* eslint-disable max-statements, no-process-exit, no-console */
 import { execa } from "execa";
 import * as fs from "fs";
 import * as path from "path";
@@ -7,9 +6,12 @@ const ghPagesPath = ".gh-pages-temp";
 
 (async () => {
   try {
-    // Clean up previous temp dir if exists
     if (fs.existsSync(ghPagesPath)) {
-      fs.rmSync(ghPagesPath, { recursive: true, force: true });
+      console.log("🧹 Removing existing worktree...");
+      await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
+      if (fs.existsSync(ghPagesPath)) {
+        fs.rmSync(ghPagesPath, { recursive: true, force: true });
+      }
     }
 
     console.log("📦 Building project...");
@@ -21,7 +23,8 @@ const ghPagesPath = ".gh-pages-temp";
     await execa("git", ["worktree", "add", ghPagesPath, "gh-pages"]);
 
     console.log("📁 Copying build output to worktree...");
-    fs.rmSync(path.join(ghPagesPath), { recursive: true, force: true });
+    fs.rmSync(ghPagesPath, { recursive: true, force: true });
+    fs.mkdirSync(ghPagesPath);
     fs.cpSync(folderName, ghPagesPath, { recursive: true });
 
     console.log("📤 Committing and pushing...");
@@ -31,7 +34,6 @@ const ghPagesPath = ".gh-pages-temp";
 
     console.log("🧹 Cleaning up...");
     await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
-    fs.rmSync(ghPagesPath, { recursive: true, force: true });
 
     console.log("✅ Successfully deployed!");
   } catch (e) {
