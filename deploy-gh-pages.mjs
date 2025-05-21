@@ -3,14 +3,17 @@ import * as fs from "fs";
 import * as path from "path";
 
 const ghPagesPath = ".gh-pages-temp";
+const gitWorktreeMeta = path.join(ghPagesPath, ".git");
 
 (async () => {
   try {
     if (fs.existsSync(ghPagesPath)) {
-      console.log("🧹 Removing existing worktree...");
-      await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
-      if (fs.existsSync(ghPagesPath)) {
+      if (!fs.existsSync(gitWorktreeMeta)) {
+        console.log("⚠️ .gh-pages-temp exists but no .git found, deleting folder...");
         fs.rmSync(ghPagesPath, { recursive: true, force: true });
+      } else {
+        console.log("🧹 Removing existing worktree...");
+        await execa("git", ["worktree", "remove", ghPagesPath, "--force"]);
       }
     }
 
@@ -20,7 +23,7 @@ const ghPagesPath = ".gh-pages-temp";
     const folderName = fs.existsSync("dist") ? "dist" : "build";
 
     console.log("🌿 Creating worktree for gh-pages...");
-    await execa("git", ["worktree", "add", ghPagesPath, "gh-pages"]);
+    await execa("git", ["worktree", "add", "-f", ghPagesPath, "gh-pages"]);
 
     console.log("📁 Copying build output to worktree...");
     fs.rmSync(ghPagesPath, { recursive: true, force: true });
