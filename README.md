@@ -2,7 +2,7 @@
 
 This project demonstrates how to set up a **Vue 3 + Vite** project using **Bun** or **Node.js**, with automated deployment to **GitHub Pages** using a custom Node.js script (`deploy-gh-pages.mjs`) and GitHub Actions.
 
-> 📡 Live Demo: [https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages](https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages)
+> 📡 **Live Demo:** [https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages](https://BaseMax.github.io/vuejs-cicd-deploy-on-github-pages)
 
 ---
 
